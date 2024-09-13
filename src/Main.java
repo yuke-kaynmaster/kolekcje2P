@@ -1,9 +1,19 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
 
 
     public static void main(String[] args) {
+        ArrayList<Integer> wylosowane = wylosujLiczby(7);
+        LinkedList<Integer> wpisane = wczytajLiczby(4);
+        ArrayList<Integer> trafione = sprawdzKtorePowtarzajaSie(wylosowane,wpisane);
+        System.out.println("liczby wylosowane");
+        wypiszListe(wylosowane);
+        System.out.println("liczby wpisane");
+        wypiszListe(wpisane);
+        System.out.println("liczby trafione");
+        wypiszListe(trafione);
 
     }
 
@@ -12,7 +22,7 @@ public class Main {
      * @param ile - liczba wylosowanych wartości
      * @return lista z wylosowanymi
      */
-    private ArrayList<Integer> wylosujLiczby(int ile){
+    private static ArrayList<Integer> wylosujLiczby(int ile){
         ArrayList <Integer> listaLosowychBezPowtorzen = new ArrayList<>();
         int liczba;
         for (int i = 0; i < ile; i++) {
@@ -25,7 +35,7 @@ public class Main {
         return listaLosowychBezPowtorzen;
     }
 
-    private LinkedList<Integer> wczytajLiczby(int ile){
+    private static LinkedList<Integer> wczytajLiczby(int ile){
         LinkedList<Integer> wpisane = new LinkedList<>();
         Scanner klawiatura = new Scanner(System.in);
         System.out.println("podaj "+ile+" liczba");
@@ -35,13 +45,13 @@ public class Main {
         return wpisane;
     }
 
-    private void wypiszListe(List<Integer>lista){
+    private static void wypiszListe(List<Integer>lista){
         for (Integer element:lista){
             System.out.println(element+", ");
         }
     }
 
-    private ArrayList<Integer> sprawdzKtorePowtarzajaSie(ArrayList<Integer> wpisane,LinkedList<Integer> wylosowane){
+    private static ArrayList<Integer> sprawdzKtorePowtarzajaSie(ArrayList<Integer> wpisane,LinkedList<Integer> wylosowane){
         ArrayList<Integer> trafione = new ArrayList<>();
         for (Integer element:wylosowane){
             if(wpisane.contains(element)){
