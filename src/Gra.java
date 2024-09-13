@@ -44,6 +44,17 @@ public class Gra {
         }
     }
 
+    public void zagraj(){
+        wylosujLiczby(20);
+        wczytajLiczby(3);
+        sprawdzKtorePowtarzajaSie();
+        System.out.println("wpisane ");
+        wypiszListe(wpisane);
+        System.out.println("wylosowane ");
+        wypiszListe(wylosowane);
+        System.out.println("tafione ");
+        wypiszListe(trafione);
+    }
 
 
 }
