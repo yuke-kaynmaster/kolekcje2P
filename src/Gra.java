@@ -35,7 +35,7 @@ public class Gra {
         }
     }
 
-    private void sprawdzKtorePowtarzajaSie(ArrayList<Integer> wpisane,LinkedList<Integer> wylosowane){
+    private void sprawdzKtorePowtarzajaSie(){
         trafione = new ArrayList<>();
         for (Integer element:wylosowane){
             if(wpisane.contains(element)){
